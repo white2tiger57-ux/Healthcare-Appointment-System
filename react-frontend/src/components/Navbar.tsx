@@ -17,10 +17,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/" className="navbar-brand-link">
-          <img src="/assets/logo.png" alt="Healthcare Logo" className="navbar-logo" />
-          <img src="/assets/text-logo.png" alt="HealthCare" className="navbar-text-logo" />
-        </Link>
+        <Link to="/">HealthCare</Link>
       </div>
       <div className="navbar-links">
         <Link to={isDoctor ? '/doctor/dashboard' : '/dashboard'}>Dashboard</Link>
