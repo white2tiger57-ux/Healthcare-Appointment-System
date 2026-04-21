@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/">🏥 HealthCare</Link>
+        <Link to="/">HealthCare</Link>
       </div>
       <div className="navbar-links">
         <Link to={isDoctor ? '/doctor/dashboard' : '/dashboard'}>Dashboard</Link>
