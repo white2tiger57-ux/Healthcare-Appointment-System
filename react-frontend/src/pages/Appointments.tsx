@@ -46,7 +46,10 @@ const Appointments: React.FC = () => {
         appointments.length === 0 ? <div className="card" style={{ textAlign: 'center', padding: '3rem' }}><p style={{ color: '#a8b2d1' }}>No appointments found</p></div> :
           <div className="table-container"><table><thead><tr><th>Doctor/Patient</th><th>Date</th><th>Time</th><th>Type</th><th>Status</th><th>Actions</th></tr></thead>
             <tbody>{appointments.map(a => (
-              <tr key={a.id}><td>{user?.userType === 'doctor' ? a.patientName : a.doctorName}</td><td>{a.appointmentDate}</td><td>{a.appointmentTime}</td>
+              <tr key={a.id}><td style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <img src={user?.userType === 'doctor' ? '/assets/patient-icon.png' : '/assets/doctor-icon.png'} alt="" style={{ height: 24, width: 24, objectFit: 'contain', borderRadius: '50%' }} />
+                {user?.userType === 'doctor' ? a.patientName : a.doctorName}
+              </td><td>{a.appointmentDate}</td><td>{a.appointmentTime}</td>
                 <td>{a.serviceType || '-'}</td><td><span className={`badge badge-${a.status.toLowerCase()}`}>{a.status}</span></td>
                 <td>{a.status === 'Scheduled' && <button className="btn btn-danger" style={{ padding: '4px 10px', fontSize: '0.8rem' }} onClick={() => cancelAppointment(a.id)}>Cancel</button>}</td></tr>
             ))}</tbody></table></div>}

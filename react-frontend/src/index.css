@@ -264,3 +264,32 @@ td {
 tr:last-child td {
   border-bottom: none;
 }
+
+/* Danger button */
+.btn-danger {
+  background-color: #dc2626;
+  color: #FFFFFF;
+  border: none;
+}
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+/* Login hero responsive */
+.login-hero {
+  box-shadow: var(--shadow-hover);
+}
+
+@media (max-width: 860px) {
+  .login-hero {
+    min-height: 280px !important;
+  }
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--color-text-secondary);
+  font-size: 1.05rem;
+}

@@ -38,7 +38,7 @@ const BookAppointment: React.FC = () => {
   return (
     <div className="animate-fade-in">
       <div className="page-header" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-        <CalendarIcon size={32} color="var(--color-primary)" />
+        <img src="/assets/hospital-logo.png" alt="Hospital" style={{ height: 40, width: 40, objectFit: 'contain' }} />
         <div>
           <h1 style={{ margin: 0 }}>Book Appointment</h1>
           <p style={{ margin: 0 }}>Select a doctor and available time slot</p>
@@ -59,7 +59,7 @@ const BookAppointment: React.FC = () => {
             </div>
             <div className="form-group">
               <label style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <Stethoscope size={16} /> Doctor
+                <img src="/assets/doctor-icon.png" alt="" style={{ height: 18, width: 18, objectFit: 'contain' }} /> Doctor
               </label>
               <select value={doctorId} onChange={e => setDoctorId(e.target.value)} required disabled={!deptId}>
                 <option value="">Select doctor</option>

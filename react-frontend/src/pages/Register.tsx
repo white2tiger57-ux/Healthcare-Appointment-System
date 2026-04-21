@@ -81,15 +81,16 @@ const Register: React.FC = () => {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
         <div className="card" style={{ maxWidth: 500, padding: '2.5rem', textAlign: 'center', width: '100%' }}>
+          <img src="/assets/hospital-logo.png" alt="Healthcare" style={{ height: 48, marginBottom: '0.5rem' }} />
           <h1 style={{ marginBottom: '1rem', color: 'var(--color-primary)' }}>Create Account</h1>
           <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>Choose your role to get started</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <button className="btn btn-primary" onClick={() => setRole('patient')} style={{ padding: '20px 40px', fontSize: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-              <User size={28} />
+              <img src="/assets/patient-icon.png" alt="Patient" style={{ height: 44, width: 44, objectFit: 'contain' }} />
               Patient
             </button>
             <button className="btn btn-secondary" onClick={() => setRole('doctor')} style={{ padding: '20px 40px', fontSize: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-              <Stethoscope size={28} />
+              <img src="/assets/doctor-icon.png" alt="Doctor" style={{ height: 44, width: 44, objectFit: 'contain' }} />
               Doctor
             </button>
           </div>

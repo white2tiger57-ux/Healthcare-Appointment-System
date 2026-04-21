@@ -20,11 +20,29 @@ const Notifications: React.FC = () => {
         <div><h1>Notifications</h1></div>
         {notifications.length > 0 && <button className="btn btn-danger" onClick={deleteAll}>Clear All</button>}
       </div>
-      {notifications.length === 0 ? <div className="card" style={{ textAlign: 'center', padding: '3rem' }}><p style={{ color: '#a8b2d1' }}>No notifications</p></div> :
+      {notifications.length === 0 ? (
+        <div className="card" style={{ textAlign: 'center', padding: '3rem' }}>
+          <img
+            src="/assets/notification-page.png"
+            alt="No notifications"
+            style={{
+              maxWidth: 280,
+              width: '100%',
+              height: 'auto',
+              marginBottom: '1.5rem',
+              opacity: 0.85,
+              borderRadius: 'var(--radius-card)',
+            }}
+          />
+          <p style={{ color: 'var(--color-text-secondary)', fontSize: '1.05rem', fontStyle: 'italic' }}>
+            You're all caught up — no notifications right now.
+          </p>
+        </div>
+      ) : (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           {notifications.map((n: any) => (
             <div className="card" key={n.id} style={{ opacity: n.is_read ? 0.6 : 1, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <div><strong>{n.title}</strong><p style={{ color: '#a8b2d1', fontSize: '0.85rem', marginTop: '4px' }}>{n.message}</p>
+              <div><strong>{n.title}</strong><p style={{ color: 'var(--color-text-secondary)', fontSize: '0.85rem', marginTop: '4px' }}>{n.message}</p>
                 <span style={{ fontSize: '0.75rem', color: '#666' }}>{new Date(n.created_at).toLocaleString()}</span></div>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 {!n.is_read && <button className="btn btn-secondary" style={{ padding: '4px 10px', fontSize: '0.8rem' }} onClick={() => markRead(n.id)}>✓</button>}
@@ -32,7 +50,8 @@ const Notifications: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>}
+        </div>
+      )}
     </div>
   );
 };

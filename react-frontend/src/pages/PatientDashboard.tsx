@@ -114,9 +114,12 @@ const PatientDashboard: React.FC = () => {
   return (
     <div className="animate-fade-in">
       {/* Header */}
-      <div className="page-header">
-        <h1>Patient Dashboard</h1>
-        <p>Welcome back. Here is a summary of your health and upcoming care.</p>
+      <div className="page-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <img src="/assets/patient-icon.png" alt="Patient" style={{ height: 52, width: 52, objectFit: 'contain' }} />
+        <div>
+          <h1 style={{ margin: 0 }}>Patient Dashboard</h1>
+          <p style={{ margin: 0 }}>Welcome back. Here is a summary of your health and upcoming care.</p>
+        </div>
       </div>
 
       {/* Stats Row */}
@@ -176,7 +179,9 @@ const PatientDashboard: React.FC = () => {
                       alignItems: 'center'
                     }}
                   >
-                    <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <img src="/assets/doctor-icon.png" alt="" style={{ height: 32, width: 32, objectFit: 'contain', borderRadius: '50%', flexShrink: 0 }} />
+                      <div>
                       <div style={{ fontWeight: 600, color: 'var(--color-text-primary)' }}>
                         {a.doctorName || a.Doctor_Name || 'Doctor'}
                       </div>
@@ -184,6 +189,7 @@ const PatientDashboard: React.FC = () => {
                         {a.appointmentDate || a.Appointment_Date} at {a.appointmentTime || a.Appointment_Time}
                         {(a.serviceType || a.Service_Type) && ` · ${a.serviceType || a.Service_Type}`}
                       </div>
+                    </div>
                     </div>
                     <span className={`badge badge-${(a.status || a.Status || 'scheduled').toLowerCase()}`}>
                       {a.status || a.Status}
@@ -313,6 +319,20 @@ const PatientDashboard: React.FC = () => {
             >
               Log new vitals <ArrowRight size={16} />
             </Link>
+          </div>
+
+          {/* Sidebar Illustration */}
+          <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+            <img
+              src="/assets/sidebar-image.png"
+              alt="Healthcare illustration"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 200,
+                objectFit: 'cover',
+              }}
+            />
           </div>
 
           {/* Quick Actions */}

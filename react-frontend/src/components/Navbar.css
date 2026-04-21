@@ -10,6 +10,26 @@
   top: 0;
   z-index: 1000;
 }
+.navbar-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.navbar-logo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.navbar-logo:hover {
+  transform: scale(1.08);
+}
+.navbar-text-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
 .navbar-brand a {
   color: #e94560;
   font-size: 1.4rem;
