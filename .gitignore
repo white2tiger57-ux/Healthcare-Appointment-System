@@ -1,0 +1,27 @@
+# Java / Spring Boot
+spring-boot-backend/target/
+spring-boot-backend/.mvn/
+spring-boot-backend/mvnw
+spring-boot-backend/mvnw.cmd
+*.log
+
+# React / Node
+react-frontend/node_modules/
+react-frontend/dist/
+react-frontend/.env
+react-frontend/.env.local
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+spring-boot-backend/logs/*.log
+spring-boot-backend/logs/*.gz
+spring-boot-backend/logs/*.log.*
