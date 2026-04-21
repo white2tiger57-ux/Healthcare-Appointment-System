@@ -81,16 +81,15 @@ const Register: React.FC = () => {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
         <div className="card" style={{ maxWidth: 500, padding: '2.5rem', textAlign: 'center', width: '100%' }}>
-          <img src="/assets/hospital-logo.png" alt="Healthcare" style={{ height: 48, marginBottom: '0.5rem' }} />
           <h1 style={{ marginBottom: '1rem', color: 'var(--color-primary)' }}>Create Account</h1>
           <p style={{ color: 'var(--color-text-secondary)', marginBottom: '2rem' }}>Choose your role to get started</p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <button className="btn btn-primary" onClick={() => setRole('patient')} style={{ padding: '20px 40px', fontSize: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-              <img src="/assets/patient-icon.png" alt="Patient" style={{ height: 44, width: 44, objectFit: 'contain' }} />
+              <User size={28} />
               Patient
             </button>
             <button className="btn btn-secondary" onClick={() => setRole('doctor')} style={{ padding: '20px 40px', fontSize: '1rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}>
-              <img src="/assets/doctor-icon.png" alt="Doctor" style={{ height: 44, width: 44, objectFit: 'contain' }} />
+              <Stethoscope size={28} />
               Doctor
             </button>
           </div>
@@ -112,16 +111,16 @@ const Register: React.FC = () => {
           </button>
           <h1 style={{ margin: 0, color: 'var(--color-primary)' }}>Register as {role === 'patient' ? 'Patient' : 'Doctor'}</h1>
         </div>
-        
+
         {error && <div className="alert alert-error">{error}</div>}
         {success && <div className="alert alert-success">{success}</div>}
-        
+
         <form onSubmit={handleSubmit}>
           <div className="grid-2">
             <div className="form-group"><label>Full Name</label><input required onChange={e => update('name', e.target.value)} /></div>
             <div className="form-group"><label>Mobile</label><input required onChange={e => update('mobile', e.target.value)} /></div>
           </div>
-          
+
           {role === 'patient' && (
             <div className="grid-2">
               <div className="form-group"><label>Age</label><input type="number" required onChange={e => update('age', e.target.value)} /></div>
@@ -135,7 +134,7 @@ const Register: React.FC = () => {
               </div>
             </div>
           )}
-          
+
           {role === 'doctor' && (
             <>
               <div className="grid-2">
@@ -166,13 +165,13 @@ const Register: React.FC = () => {
               </div>
             </>
           )}
-          
+
           <div className="form-group"><label>Email</label><input type="email" required onChange={e => update('email', e.target.value)} /></div>
           <div className="grid-2">
             <div className="form-group"><label>Password</label><input type="password" required minLength={8} onChange={e => update('password', e.target.value)} /></div>
             <div className="form-group"><label>Confirm Password</label><input type="password" required onChange={e => update('confirmPassword', e.target.value)} /></div>
           </div>
-          
+
           <button type="submit" className="btn btn-primary" disabled={loading} style={{ width: '100%', padding: '12px', marginTop: '1rem' }}>
             {loading ? 'Registering...' : 'Create Account'}
           </button>

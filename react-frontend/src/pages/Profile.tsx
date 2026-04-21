@@ -28,14 +28,11 @@ const Profile: React.FC = () => {
 
   return (
     <div>
-      <div className="page-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <img src="/assets/patient-icon.png" alt="Profile" style={{ height: 44, width: 44, objectFit: 'contain' }} />
-        <h1 style={{ margin: 0 }}>Profile</h1>
-      </div>
+      <div className="page-header"><h1>Profile</h1></div>
       <div className="card" style={{ maxWidth: 600 }}>
         <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-          <div style={{ width: 88, height: 88, borderRadius: '50%', background: 'linear-gradient(135deg, var(--color-primary), var(--color-accent))', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '3px solid var(--color-border)' }}>
-            <img src="/assets/patient-icon.png" alt="Avatar" style={{ width: 56, height: 56, objectFit: 'contain' }} />
+          <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'linear-gradient(135deg, #e94560, #f39c12)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', color: 'white' }}>
+            {profile.Name?.charAt(0) || '?'}
           </div>
           <div style={{ marginTop: '0.5rem' }}><label className="btn btn-secondary" style={{ cursor: 'pointer', padding: '4px 12px', fontSize: '0.8rem' }}>
             Change Photo <input type="file" accept="image/*" onChange={handlePhotoUpload} style={{ display: 'none' }} />
